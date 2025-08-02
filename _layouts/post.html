@@ -1,0 +1,45 @@
+---
+layout: page
+---
+<div class="container-sm">
+    <div class="row">
+        <div class="col-lg-6 mx-auto">
+            {% if page.image %}
+            <div class="event-image aos-init aos-animate" data-aos="fade-up">
+              <img src="{{ page.image }}" alt="{{ page.title }}" class="img-fluid rounded">
+            </div>
+            {%endif%}
+            <div class="row my-5">
+                <div class="col">
+                    {{content}}
+                </div>
+            </div>
+            <div class="row row-cols-2 row-cols-md-2 g-4">
+              <div class="col">
+                <div class="detail-v1">
+                  <span class="detail-label">تاریخ</span>
+                  <span class="detail-val"><time class="persianDate fw-bold" data-time="{{ page.date }}" data-timestamp="{{ page.date | date: '%s' }}"></time></span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="detail-v1">
+                  <span class="detail-label">دسته</span>
+                  <span class="detail-val">{{page.categories | join: ', '}}</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="detail-v1">
+                  <span class="detail-label">برچسب</span>
+                  <span class="detail-val">{{page.tags | join: '، '}}</span>
+                </div>
+              </div>
+              <div class="col">
+                <div class="detail-v1">
+                  <span class="detail-label">اشتراک</span>
+                  <span class="detail-val"></span>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>

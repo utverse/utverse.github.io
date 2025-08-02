@@ -1,0 +1,37 @@
+<div class="col-lg-6"  data-aos="fade-up" data-aos-delay="100">
+    <div class="event-card">
+        <div class="event-date">
+        <span class="month persianMonth " data-timestamp="{{event.start | date: '%s'}}"></span>
+        <span class="day persianDay " data-timestamp="{{event.start | date: '%s'}}"></span>
+        <span class="year persianYear " data-timestamp="{{event.start | date: '%s'}}"></span>
+        </div>
+        <div class="event-content">
+        {%if event.category %}
+        <div class=" ">
+        {% for cat in event.category %}
+        <div class="event-tag academic">
+            {{cat}}
+        </div>
+        {%endfor%}
+        </div>
+        {%endif%}
+        
+        <h3 class=" "><a href="{{event.url}}">{{event.title}}</a></h3>
+        <p class=" ">{{ event.excerpt | strip_html | truncatewords: 20 }}</p>
+        <div class="event-meta">
+            <div class="meta-item ">
+            <i class="bi bi-clock"></i>
+            <span>{% if event.time %}{{ event.time }}{%endif%}</span>
+            </div>
+            <div class="meta-item ">
+            <i class="bi bi-geo-alt"></i>
+            <span>{% if event.location %}{{ event.location }}{%endif%}</span>
+            </div>
+        </div>
+        <div class="event-actions ">
+            <a href="#" class="btn-learn-more">جزئیات</a>
+            <a href="#" class="btn-calendar"><i class="bi bi-calendar-plus"></i> افزودن به تقویم</a>
+        </div>
+        </div>
+    </div>
+</div>

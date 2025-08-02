@@ -1,0 +1,58 @@
+<div class="program-banner">
+    <div class="banner-image">
+    <img src="{{ event.image | default: '/assets/img/education/default.webp' }}" alt="{{ event.title }}" class="img-fluid">
+    <div class="banner-badge">
+        <span class="badge-text">
+        <time class="persianDay" data-timestamp="{{event.start | date: '%s'}}"></time>
+        <time class="persianMonth" data-timestamp="{{event.start | date: '%s'}}"></time>
+        </span>
+    </div>
+    {%if event.category %}
+    <div class="event-cat-overlay">
+        {% for cat in event.category %}
+        <a href="#" class="btn badge rounded btn-sm btn-danger shadow-sm {{ cat }}">{{cat}}</a>
+        {%endfor%}
+    </div>
+    {%endif%}
+    </div>
+    <div class="banner-info">
+    <div class="program-header">
+        <h3>{{ event.title }}</h3>
+        <div class="program-stats">
+        <span><i class="bi bi-people-fill"></i>
+            {% if event.people%}
+            {% for prsn in event.people %}
+            {% assign person = site.people | where: 'slug', prsn.slug | first %}
+            {% if person %}
+            {{ person.title }}
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+        </span>
+        <span><i class="bi bi-award-fill"></i>{{ event.time }}</span>
+        </div>
+    </div>
+    <p>{{ event.excerpt | strip_html | truncatewords: 20 }}</p>
+    <div class="program-details">
+        {% if event.sessions %}
+        <div class="detail-item">
+        <i class="bi bi-files ms-2"></i>
+        <span>{{ event.sessions | append: ' جلسه'}}</span>
+        </div>
+        {% endif %}
+        {% if event.present %}
+        <div class="detail-item">
+        <i class="bi bi-files mx-2"></i>
+        <span>{{ event.present | join: '/'}}</span>
+        </div>
+        {% endif %}
+        {% if event.location %}
+        <div class="detail-item">
+        <i class="bi bi-geo-alt mx-2"></i>
+        <span>{{ event.location }}</span>
+        </div>
+        {% endif %}
+    </div>
+    <a href="#" class="discover-btn">Discover Program</a>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="program-item">
+    <div class="item-icon">
+        <img src="{{ event.image | default: '/assets/img/education/default.webp' }}" alt="{{ event.title }}" class="img-fluid">
+    </div>
+    <div class="item-content">
+        <h4>{{event.title}}</h4>
+        <p>{{ event.excerpt | strip_html | truncatewords: 20 }}</p>
+        <div class="meta-info">
+        <span><time class="persianDate" data-timestamp="{{event.start | date: '%s'}}"></time></span>
+        <span>
+            {% if event.people%}
+            {% for prsn in event.people %}
+            {% assign person = site.people | where: 'slug', prsn.slug | first %}
+            {% if person %}
+            {{ person.title }}
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+        </span>
+        </div>
+    </div>
+    <div class="item-arrow">
+        <i class="bi bi-arrow-left"></i>
+    </div>
+</div>

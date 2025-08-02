@@ -1,0 +1,77 @@
+---
+layout: page
+---
+<section id="event" class="event section">
+  <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+    <div class="row">
+      <div class="col-lg-8">
+
+
+
+        <div class="event-content aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+        <div class="event-meta mb-4 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <div class="meta-item">
+                <i class="bi bi-gear"></i>
+                <span>{{ page.position }}</span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="meta-item">
+                <i class="bi bi-calendar-date"></i>
+                <span>{{ page.year }}</span>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="meta-item">
+                <i class="bi bi-building"></i>
+                <span>{{ page.brand }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="description">
+            {{ content }}
+          </div>
+
+
+          {% if page.gallery %}
+          <div class="event-gallery mt-5 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+            <h3>گالری تصاویر</h3>
+            <div class="row g-4 mt-2">
+              {% for img in page.gallery %}
+              <div class="col-md-4">
+                <a href="{{ img }}" class="glightbox">
+                  <img src="{{ img }}" alt="{{ page.title }}" class="img-fluid rounded">
+                </a>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="event-image mb-4 aos-init aos-animate" data-aos="fade-up">
+          <img src="{{ page.image }}" alt="{{ page.title }}" class="img-fluid rounded">
+        </div>
+{%if page.features %}
+<h3 class="mt-4">مشخصات فنی</h3>
+<ul class="list-group list-group-flush border rounded shadow-sm px-0">
+  {% for feature in page.features %}
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <span class="fw-semibold text-muted">{{ feature.name }}</span>
+    <span class="fw-bold text-end">{{ feature.value }}</span>
+  </li>
+  {% endfor %}
+</ul>
+{%endif%}
+
+
+    </div>
+    </div>
+  </div>
+</section>

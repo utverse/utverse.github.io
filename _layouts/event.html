@@ -1,0 +1,98 @@
+---
+layout: page
+---
+<section id="event" class="event section">
+  <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
+    <div class="row row-cols-2 row-cols-md-4 g-4">
+      <div class="col">
+        <div class="detail-v1">
+          <span class="detail-label">تاریخ شروع</span>
+          <span class="detail-val"><time class="persianDate fw-bold" data-time="{{ page.start }}" data-timestamp="{{ page.start | date: '%s' }}"></time></span>
+        </div>
+      </div>
+      <div class="col">
+        <div class="detail-v1">
+          <span class="detail-label">زمان برگزاری</span>
+          <span class="detail-val">{{ page.day }} {{ page.time }}</span>
+        </div>
+      </div>
+      <div class="col">
+        <div class="detail-v1">
+          <span class="detail-label">نحوه برگزاری</span>
+          <span class="detail-val">{% if page.sessions %}{{ page.sessions | size |  append: ' جلسه'}}{%endif%} {{ page.present | join: ' / ' }}</span>
+        </div>
+      </div>
+      <div class="col">
+        <div class="detail-v1">
+          <span class="detail-label">محل برگزاری</span>
+          <span class="detail-val">{{ page.location }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-lg-8">
+        <div class="event-content aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+          <p>
+            {{page.content}}
+          </p>
+          {%if page.program %}
+          <h3 class="mt-4">برنامه</h3>      
+          <div class="schedule-table" bis_skin_checked="1">
+            {%for session in page.program %}
+            <div class="schedule-row" bis_skin_checked="1">
+              <div class="schedule-time" bis_skin_checked="1">{{session.title}}</div>
+              <div class="schedule-activity" bis_skin_checked="1">
+                <h4>{{session.name}}</h4>
+                <p>{{session.description}}</p>
+              </div>
+            </div>
+          {%endfor%}
+          </div>          
+          {%endif%}
+          <!-- Optional Gallery or Schedule can go here -->
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="event-sidebar">
+          {% if page.people%}
+          <div class="custom-block aos-init aos-animate" data-aos="fade-left" data-aos-delay="300">
+            <h3 class="section-title text-black">برگزارکننده</h3>            
+                {% for prsn in page.people %}
+                {% assign person = site.people | where: 'slug', prsn.slug | first %}
+                {% assign persontag = prsn.title %}
+                {% if person %}
+                {% include card-team.html %}
+                {% endif %}
+                {% endfor %}
+          </div>          
+          {%endif%}
+          <div class="custom-block aos-init aos-animate" data-aos="fade-left" data-aos-delay="200">
+            <h3 class="section-title text-black">ثبت‌نام</h3>
+            <form>
+              <div class="mb-3">
+                <input type="text" class="form-control" placeholder="نام" id="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">ایمیل</label>
+                <input type="email" class="form-control" placeholder="Email Address" required>
+              </div>
+              <div class="mb-3">
+                <input type="tel" class="form-control" placeholder="شماره تماس" id="phone">
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-register">ثبت‌نام</button>
+              </div>
+            </form>
+          </div>
+          <div class="custom-block aos-init aos-animate" data-aos="fade-left" data-aos-delay="200">
+            <h3  class="section-title text-black">پوستر</h3>
+            <div class="event-image aos-init aos-animate" data-aos="fade-up">
+              <img src="{{ page.image }}" alt="{{ page.title }}" class="img-fluid rounded">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
