@@ -43,7 +43,9 @@ a:hover {
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   font-family: 'Vazirmatn', "Montserrat", sans-serif;
-  color: #0389ff; }
+  color: #0389ff;
+  letter-spacing: .1rem !important; 
+}
 
   
 .form-control, .custom-select {

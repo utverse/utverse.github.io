@@ -265,23 +265,6 @@ title: UTverse
   </div>
 </section>
 
-<section id="events" class="events section">
-  <div class="container section-title aos-init aos-animate" data-aos="fade-up">
-    <h2>دوره‌های آموزشی</h2>
-    <p>دوره‌های پیش‌ رو در آزمایشگاه متاورس شهری</p>
-  </div>
-
-  <div class="container aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-    <div class="row g-4">
-      {% assign sorted_events = site.events | where: "type", 'course' | sort: 'start' | reverse %}
-      {% for event in sorted_events limit:6 %}
-      {%include card-event.html %}
-      {% endfor %}
-    </div>
-    </div>
-  </div>
-</section>
-
     <section id="featured-programs" class="featured-programs section">
 
       <!-- Section Title -->
