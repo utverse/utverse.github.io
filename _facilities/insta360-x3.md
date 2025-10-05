@@ -3,6 +3,7 @@ name: Insta360 X3
 title: دوربین ۳۶۰ درجه
 year: 2023
 brand: Insta360
+available: true
 image: /assets/images/facilities/insta360-x3.jpg
 gallery:
     - /assets/images/facilities/insta360-x3-1.jpg

@@ -3,6 +3,7 @@ name: Oculus Quest 2
 title: هدست واقعیت مجازی
 year: 2023
 brand: Meta
+available: true
 image: /assets/images/facilities/oculus1.jpg
 gallery:
     - /assets/images/facilities/oculus1.jpg

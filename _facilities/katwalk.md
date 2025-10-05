@@ -1,7 +1,8 @@
 ---
 name: KatWalk C
-title: شبیه‌ساز حرکت
+title: شبیه‌ساز حرکت (بزودی)
 year: 2023
+available: false
 brand: KatVR
 image: /assets/images/facilities/kat-walk-c-2.webp
 gallery:

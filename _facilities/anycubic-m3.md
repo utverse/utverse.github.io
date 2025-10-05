@@ -3,6 +3,7 @@ name: Anycubic Photon M3 Plus
 title: چاپگر سه‌بعدی
 year: 2023
 brand: Anycubic
+available: true
 image: /assets/images/facilities/anycubic.jpg
 gallery:
     - /assets/images/facilities/anycubic1.jpg

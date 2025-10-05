@@ -1,8 +1,9 @@
 ---
 name: DJI Avata
-title: پهپاد FPV
+title: پهپاد FPV (بزودی)
 year: 2023
 brand: DJI
+available: false
 image: /assets/images/facilities/dji-avata.jpg
 gallery:
     - /assets/images/facilities/dji-avata1.jpg

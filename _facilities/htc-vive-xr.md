@@ -3,6 +3,7 @@ name: HTC Vive XR Elite
 title: هدست واقعیت ترکیبی
 year: 2024
 brand: HTC
+available: true
 image: /assets/images/facilities/htc-vive-xr.jpg
 gallery:
     - /assets/images/facilities/htc-vive-xr1.jpg
